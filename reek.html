@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='UTF-8' />
+    <title>Reek Output</title>
+    <style>
+    * {
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+    }
+    body {
+      background-color: #e8eef2;
+      font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+      margin: 0;
+    }
+    #header {
+      background-color: #fafbfc;
+      border-bottom: 1px solid #cfdbe2;
+      margin-bottom: 20px;
+      padding: 20px;
+      color: #444444;
+    }
+    h1 {
+      margin: 0;
+    }
+    .total-warnings {
+      color: #f47f7f;
+    }
+    #reek-smells {
+      padding: 20px;
+      width: 100%;
+    }
+    .box {
+      margin-bottom: 20px;
+      background-color: #ffffff;
+      border: 1px solid transparent;
+      border-radius: 4px;
+      border-color: #cfdbe2;
+      -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+      box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+      border-top-width: 3px;
+    }
+    .smell-list {
+      margin-bottom: 0px;
+      padding-left: 0px;
+    }
+    .list-item:first-child {
+      border-top-width: 0;
+    }
+    .list-item {
+      border-width: 1px 0;
+      border-radius: 0;
+      position: relative;
+      display: block;
+      padding: 10px 15px;
+      margin-bottom: -1px;
+      background-color: #ffffff;
+      border: 1px solid #f1f2f3;
+    }
+    .list-item > .content:first-child {
+      margin-top: 0px;
+    }
+    .list-item > .content {
+      overflow: hidden;
+    }
+    .list-item > .content > .heading {
+      margin: 0 0 5px 0;
+    }
+    .list-item > .content > small {
+      float: right;
+      color: #909fa7;
+      font-size: 0.8rem;
+    }
+    .list-item > .content > p {
+      margin: 0;
+      color: #656565;
+    }
+    </style>
+  </head>
+  <body>
+    <div id="header">
+      <h1>Reek Output - <span class="total-warnings">36 total warnings</span></h1>
+    </div>
+    <div id="reek-smells">
+      <div class="box">
+        <div class="smell-list">
+          
+          <div class="list-item">
+            <div class="content">
+              <div class="heading"><strong>Admins::UsersController#model</strong> doesn't depend on instance state (maybe move it to another class?) (UtilityFunction)</div>
+              <small class="text-muted pull-right">Line [8]</small>
+              <p>
+              <small>app/controllers/admins/users_controller.rb</small>
+              </p>
+            </div>
+          </div>
+          
+          <div class="list-item">
+            <div class="content">
+              <div class="heading"><strong>CategorySettingController#destroy</strong> has approx 7 statements (TooManyStatements)</div>
+              <small class="text-muted pull-right">Line [9]</small>
+              <p>
+              <small>app/controllers/category_setting_controller.rb</small>
+              </p>
+            </div>
+          </div>
+          
+          <div class="list-item">
+            <div class="content">
+              <div class="heading"><strong>CategorySettingController#update</strong> has approx 7 statements (TooManyStatements)</div>
+              <small class="text-muted pull-right">Line [19]</small>
+              <p>
+              <small>app/controllers/category_setting_controller.rb</small>
+              </p>
+            </div>
+          </div>
+          
+          <div class="list-item">
+            <div class="content">
+              <div class="heading"><strong>Scaffoldable::PrivateMethods#show_path</strong> calls 'model_instance.id' 4 times (DuplicateMethodCall)</div>
+              <small class="text-muted pull-right">Line [60, 64, 66, 70]</small>
+              <p>
+              <small>app/controllers/concerns/scaffoldable/private_methods.rb</small>
+              </p>
+            </div>
+          </div>
+          
+          <div class="list-item">
+            <div class="content">
+              <div class="heading"><strong>Scaffoldable::PrivateMethods#show_path</strong> calls 'url_for(action: :edit, id: model_instance.id)' 2 times (DuplicateMethodCall)</div>
+              <small class="text-muted pull-right">Line [66, 70]</small>
+              <p>
+              <small>app/controllers/concerns/scaffoldable/private_methods.rb</small>
+              </p>
+            </div>
+          </div>
+          
+          <div class="list-item">
+            <div class="content">
+              <div class="heading"><strong>Scaffoldable::PrivateMethods#show_path</strong> calls 'url_for(action: :show, id: model_instance.id)' 2 times (DuplicateMethodCall)</div>
+              <small class="text-muted pull-right">Line [60, 64]</small>
+              <p>
+              <small>app/controllers/concerns/scaffoldable/private_methods.rb</small>
+              </p>
+            </div>
+          </div>
+          
+          <div class="list-item">
+            <div class="content">
+              <div class="heading"><strong>Scaffoldable::PrivateMethods#new_model</strong> performs a nil-check (NilCheck)</div>
+              <small class="text-muted pull-right">Line [36]</small>
+              <p>
+              <small>app/controllers/concerns/scaffoldable/private_methods.rb</small>
+              </p>
+            </div>
+          </div>
+          
+          <div class="list-item">
+            <div class="content">
+              <div class="heading"><strong>CustomerManageController</strong> assumes too much for instance variable '@q' (InstanceVariableAssumption)</div>
+              <small class="text-muted pull-right">Line [1]</small>
+              <p>
+              <small>app/controllers/customer_manage_controller.rb</small>
+              </p>
+            </div>
+          </div>
+          
+          <div class="list-item">
+            <div class="content">
+              <div class="heading"><strong>CustomerManageController</strong> has the variable name '@q' (UncommunicativeVariableName)</div>
+              <small class="text-muted pull-right">Line [4]</small>
+              <p>
+              <small>app/controllers/customer_manage_controller.rb</small>
+              </p>
+            </div>
+          </div>
+          
+          <div class="list-item">
+            <div class="content">
+              <div class="heading"><strong>DonationCoursesController#create</strong> has approx 8 statements (TooManyStatements)</div>
+              <small class="text-muted pull-right">Line [23]</small>
+              <p>
+              <small>app/controllers/donation_courses_controller.rb</small>
+              </p>
+            </div>
+          </div>
+          
+          <div class="list-item">
+            <div class="content">
+              <div class="heading"><strong>DonationManageController</strong> assumes too much for instance variable '@column_names' (InstanceVariableAssumption)</div>
+              <small class="text-muted pull-right">Line [2]</small>
+              <p>
+              <small>app/controllers/donation_manage_controller.rb</small>
+              </p>
+            </div>
+          </div>
+          
+          <div class="list-item">
+            <div class="content">
+              <div class="heading"><strong>DonationManageController</strong> assumes too much for instance variable '@donation' (InstanceVariableAssumption)</div>
+              <small class="text-muted pull-right">Line [2]</small>
+              <p>
+              <small>app/controllers/donation_manage_controller.rb</small>
+              </p>
+            </div>
+          </div>
+          
+          <div class="list-item">
+            <div class="content">
+              <div class="heading"><strong>DonationManageController</strong> assumes too much for instance variable '@donations' (InstanceVariableAssumption)</div>
+              <small class="text-muted pull-right">Line [2]</small>
+              <p>
+              <small>app/controllers/donation_manage_controller.rb</small>
+              </p>
+            </div>
+          </div>
+          
+          <div class="list-item">
+            <div class="content">
+              <div class="heading"><strong>DonationManageController</strong> assumes too much for instance variable '@q' (InstanceVariableAssumption)</div>
+              <small class="text-muted pull-right">Line [2]</small>
+              <p>
+              <small>app/controllers/donation_manage_controller.rb</small>
+              </p>
+            </div>
+          </div>
+          
+          <div class="list-item">
+            <div class="content">
+              <div class="heading"><strong>DonationManageController</strong> assumes too much for instance variable '@submit_type' (InstanceVariableAssumption)</div>
+              <small class="text-muted pull-right">Line [2]</small>
+              <p>
+              <small>app/controllers/donation_manage_controller.rb</small>
+              </p>
+            </div>
+          </div>
+          
+          <div class="list-item">
+            <div class="content">
+              <div class="heading"><strong>DonationManageController</strong> has at least 6 instance variables (TooManyInstanceVariables)</div>
+              <small class="text-muted pull-right">Line [2]</small>
+              <p>
+              <small>app/controllers/donation_manage_controller.rb</small>
+              </p>
+            </div>
+          </div>
+          
+          <div class="list-item">
+            <div class="content">
+              <div class="heading"><strong>DonationManageController#submit_for_application</strong> has approx 9 statements (TooManyStatements)</div>
+              <small class="text-muted pull-right">Line [28]</small>
+              <p>
+              <small>app/controllers/donation_manage_controller.rb</small>
+              </p>
+            </div>
+          </div>
+          
+          <div class="list-item">
+            <div class="content">
+              <div class="heading"><strong>DonationManageController</strong> has the variable name '@q' (UncommunicativeVariableName)</div>
+              <small class="text-muted pull-right">Line [5, 15]</small>
+              <p>
+              <small>app/controllers/donation_manage_controller.rb</small>
+              </p>
+            </div>
+          </div>
+          
+          <div class="list-item">
+            <div class="content">
+              <div class="heading"><strong>DonationManageController#visible_column</strong> has the variable name 'i' (UncommunicativeVariableName)</div>
+              <small class="text-muted pull-right">Line [63, 64]</small>
+              <p>
+              <small>app/controllers/donation_manage_controller.rb</small>
+              </p>
+            </div>
+          </div>
+          
+          <div class="list-item">
+            <div class="content">
+              <div class="heading"><strong>ItemManageController#search</strong> calls ''%' + params[:search_items] + '%'' 2 times (DuplicateMethodCall)</div>
+              <small class="text-muted pull-right">Line [7, 7]</small>
+              <p>
+              <small>app/controllers/item_manage_controller.rb</small>
+              </p>
+            </div>
+          </div>
+          
+          <div class="list-item">
+            <div class="content">
+              <div class="heading"><strong>ItemManageController#search</strong> calls ''%' + params[:search_items]' 2 times (DuplicateMethodCall)</div>
+              <small class="text-muted pull-right">Line [7, 7]</small>
+              <p>
+              <small>app/controllers/item_manage_controller.rb</small>
+              </p>
+            </div>
+          </div>
+          
+          <div class="list-item">
+            <div class="content">
+              <div class="heading"><strong>ItemManageController#search</strong> calls 'params[:search_items]' 2 times (DuplicateMethodCall)</div>
+              <small class="text-muted pull-right">Line [7, 7]</small>
+              <p>
+              <small>app/controllers/item_manage_controller.rb</small>
+              </p>
+            </div>
+          </div>
+          
+          <div class="list-item">
+            <div class="content">
+              <div class="heading"><strong>ItemManageController</strong> assumes too much for instance variable '@message' (InstanceVariableAssumption)</div>
+              <small class="text-muted pull-right">Line [1]</small>
+              <p>
+              <small>app/controllers/item_manage_controller.rb</small>
+              </p>
+            </div>
+          </div>
+          
+          <div class="list-item">
+            <div class="content">
+              <div class="heading"><strong>ItemManageController</strong> has at least 5 instance variables (TooManyInstanceVariables)</div>
+              <small class="text-muted pull-right">Line [1]</small>
+              <p>
+              <small>app/controllers/item_manage_controller.rb</small>
+              </p>
+            </div>
+          </div>
+          
+          <div class="list-item">
+            <div class="content">
+              <div class="heading"><strong>Managers::ApplicationController#verify_role</strong> performs a nil-check (NilCheck)</div>
+              <small class="text-muted pull-right">Line [6]</small>
+              <p>
+              <small>app/controllers/managers/application_controller.rb</small>
+              </p>
+            </div>
+          </div>
+          
+          <div class="list-item">
+            <div class="content">
+              <div class="heading"><strong>SessionsController#create</strong> has approx 6 statements (TooManyStatements)</div>
+              <small class="text-muted pull-right">Line [8]</small>
+              <p>
+              <small>app/controllers/sessions_controller.rb</small>
+              </p>
+            </div>
+          </div>
+          
+          <div class="list-item">
+            <div class="content">
+              <div class="heading"><strong>ShippingManageController</strong> assumes too much for instance variable '@shippings' (InstanceVariableAssumption)</div>
+              <small class="text-muted pull-right">Line [1]</small>
+              <p>
+              <small>app/controllers/shipping_manage_controller.rb</small>
+              </p>
+            </div>
+          </div>
+          
+          <div class="list-item">
+            <div class="content">
+              <div class="heading"><strong>ShippingManageController#yamato_b2</strong> has the name 'yamato_b2' (UncommunicativeMethodName)</div>
+              <small class="text-muted pull-right">Line [19]</small>
+              <p>
+              <small>app/controllers/shipping_manage_controller.rb</small>
+              </p>
+            </div>
+          </div>
+          
+          <div class="list-item">
+            <div class="content">
+              <div class="heading"><strong>Users::ApplicationController#verify_role</strong> performs a nil-check (NilCheck)</div>
+              <small class="text-muted pull-right">Line [6]</small>
+              <p>
+              <small>app/controllers/users/application_controller.rb</small>
+              </p>
+            </div>
+          </div>
+          
+          <div class="list-item">
+            <div class="content">
+              <div class="heading"><strong>VendorSettingController#create</strong> calls 'format.html' 2 times (DuplicateMethodCall)</div>
+              <small class="text-muted pull-right">Line [32, 35]</small>
+              <p>
+              <small>app/controllers/vendor_setting_controller.rb</small>
+              </p>
+            </div>
+          </div>
+          
+          <div class="list-item">
+            <div class="content">
+              <div class="heading"><strong>VendorSettingController#update</strong> calls 'format.html' 2 times (DuplicateMethodCall)</div>
+              <small class="text-muted pull-right">Line [44, 47]</small>
+              <p>
+              <small>app/controllers/vendor_setting_controller.rb</small>
+              </p>
+            </div>
+          </div>
+          
+          <div class="list-item">
+            <div class="content">
+              <div class="heading"><strong>VendorSettingController#update</strong> calls 'format.json' 2 times (DuplicateMethodCall)</div>
+              <small class="text-muted pull-right">Line [45, 48]</small>
+              <p>
+              <small>app/controllers/vendor_setting_controller.rb</small>
+              </p>
+            </div>
+          </div>
+          
+          <div class="list-item">
+            <div class="content">
+              <div class="heading"><strong>VendorSettingController</strong> assumes too much for instance variable '@vendor' (InstanceVariableAssumption)</div>
+              <small class="text-muted pull-right">Line [1]</small>
+              <p>
+              <small>app/controllers/vendor_setting_controller.rb</small>
+              </p>
+            </div>
+          </div>
+          
+          <div class="list-item">
+            <div class="content">
+              <div class="heading"><strong>VendorSettingController</strong> assumes too much for instance variable '@vendors' (InstanceVariableAssumption)</div>
+              <small class="text-muted pull-right">Line [1]</small>
+              <p>
+              <small>app/controllers/vendor_setting_controller.rb</small>
+              </p>
+            </div>
+          </div>
+          
+          <div class="list-item">
+            <div class="content">
+              <div class="heading"><strong>VendorSettingController#create</strong> has approx 7 statements (TooManyStatements)</div>
+              <small class="text-muted pull-right">Line [29]</small>
+              <p>
+              <small>app/controllers/vendor_setting_controller.rb</small>
+              </p>
+            </div>
+          </div>
+          
+          <div class="list-item">
+            <div class="content">
+              <div class="heading"><strong>VendorSettingController#update</strong> has approx 9 statements (TooManyStatements)</div>
+              <small class="text-muted pull-right">Line [41]</small>
+              <p>
+              <small>app/controllers/vendor_setting_controller.rb</small>
+              </p>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

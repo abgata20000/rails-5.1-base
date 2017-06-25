@@ -1,0 +1,19 @@
+{
+  "name": "rails_5_1_base v1.0",
+  "description": "heroku review app settings",
+  "scripts": {
+    "postdeploy": "bundle exec rails db:migrate db:seed"
+  },
+  "env": {
+    "RAILS_SERVE_STATIC_FILES": "true",
+    "RAILS_ENV": "staging",
+    "RACK_ENV": "staging",
+    "SECRET_KEY_BASE": "pnorj8063f375e16c650b09fe95f48f030a04639e561okoechqa98d4c9b0cf7b16a3238af04f86b483412d196e750b2e8838d0fab067b9b75f71380736bc05d3b8f325"
+  },
+  //  "formation": {},
+  //  "buildpacks": []
+  "addons": [
+      "cleardb:ignite",
+      "heroku-redis"
+  ]
+}

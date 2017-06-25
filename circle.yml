@@ -1,0 +1,20 @@
+machine:
+  # You use timezone to adjust to the same time zone as your production server.
+  timezone:
+    Asia/Tokyo
+  ruby:
+    version: 2.4.0
+  environment:
+    CUSTOMIZE_SETTING_KEY: true
+database:
+  override:
+    - mv config/database.ci.yml config/database.yml
+    - bundle exec rails db:create
+    - bundle exec rails db:migrate
+
+test:
+  override:
+    - RAILS_ENV=test bundle exec rspec -r rspec_junit_formatter --format RspecJunitFormatter -o $CIRCLE_TEST_REPORTS/rspec/junit.xml  --color --format d --require spec_helper:
+        parallel: true
+        files:
+          - spec/**/*_spec.rb

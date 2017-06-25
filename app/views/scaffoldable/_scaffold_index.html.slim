@@ -1,0 +1,28 @@
+.x_panel
+  .x_title
+    h2= t('index')
+    .clearfix
+  .x_body
+    table.table.table-striped.table-bordered.bulk_action
+      thead
+        tr
+          - column_names.each do |name|
+            th = t("activerecord.attributes.#{model_name}.#{name}")
+          th
+
+      tbody
+        - instances.each do |instance|
+          tr
+            - column_names.each do |name|
+              td = instance.send_for_view(name)
+            td
+              = render "_scaffold_link_edit", instance: instance
+              = render "_scaffold_link_destroy", instance: instance
+
+  .x_footer
+    .clearfix
+      .pull-right
+        = page_entries_info instances
+      = paginate instances
+
+    = render "_scaffold_link_new"

@@ -1,0 +1,9 @@
+- form_title = instance.new_record? ? t('new', name: '') : t('edit_for', name: '')
+.x_panel
+  .x_title
+    h2= form_title
+    .clearfix
+  .x_body
+    .row
+      .col-md-10
+        == render 'scaffold_form', instance: instance

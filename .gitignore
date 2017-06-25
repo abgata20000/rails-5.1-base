@@ -1,0 +1,79 @@
+# Ignore bundler config.
+/.bundle
+
+/node_modules
+/yarn-error.log
+
+# Ignore the default SQLite database.
+/db/*.sqlite3
+/db/*.sqlite3-journal
+
+# Ignore all logfiles and tempfiles.
+/log/*
+/tmp/*
+!/log/.keep
+!/tmp/.keep
+
+# Ignore Byebug command history file.
+.byebug_history
+
+/db/Schemafile
+/vendor/bundle/
+/vendor/ruby/
+
+# various artifacts
+**.war
+*.rbc
+*.sassc
+.redcar/
+.sass-cache
+/config/config.yml
+/config/database.yml
+/coverage.data
+/coverage/
+/db/*.javadb/
+/db/*.sqlite3
+/doc/api/
+/doc/app/
+/doc/features.html
+/doc/specs.html
+/public/cache
+/public/stylesheets/compiled
+/public/system/*
+/spec/tmp/*
+/cache
+/capybara*
+/capybara-*.html
+/gems
+/specifications
+rerun.txt
+pickle-email-*.html
+.zeus.sock
+
+# Mac finder artifacts
+.DS_Store
+
+# vim artifacts
+**.swp
+*~
+
+# ctags
+tags
+
+ Environment files that may contain sensitive data
+.env
+.env.local
+.powenv
+/reports/
+/coverage/
+
+# Ignore application configuration
+/config/application.yml
+
+*.cache
+
+*.iml
+
+.idea
+
+.project

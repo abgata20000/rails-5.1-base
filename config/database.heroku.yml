@@ -1,0 +1,58 @@
+# in heroku, use CLEARDB_DATABASE_URL
+<%
+
+require 'cgi'
+require 'uri'
+
+ENV['DATABASE_URL'] = ENV['CLEARDB_DATABASE_URL'].to_s.sub(/\Amysql/){'mysql2'}
+begin
+  uri = URI.parse(ENV["DATABASE_URL"])
+rescue URI::InvalidURIError
+  raise "Invalid DATABASE_URL"
+end
+
+raise "No RACK_ENV or RAILS_ENV found" unless ENV["RAILS_ENV"] || ENV["RACK_ENV"]
+
+def attribute(name, value, force_string = false)
+  if value
+    value_string =
+      if force_string
+        '"' + value + '"'
+      else
+        value
+      end
+    "#{name}: #{value_string}"
+  else
+    ""
+  end
+end
+
+adapter = uri.scheme
+adapter = "postgresql" if adapter == "postgres"
+
+database = (uri.path || "").split("/")[1]
+
+username = uri.user
+password = uri.password
+
+host = uri.host
+port = uri.port
+
+params = CGI.parse(uri.query || "")
+params['charset'] = ['utf8mb4'] if params['charset'].blank?
+params['encoding'] = ['utf8mb4'] if params['encoding'].blank?
+params['collation'] = ['utf8mb4_general_ci'] if params['collation'].blank?
+
+%>
+
+<%= ENV["RAILS_ENV"] || ENV["RACK_ENV"] %>:
+  <%= attribute "adapter",  adapter %>
+  <%= attribute "database", database %>
+  <%= attribute "username", username %>
+  <%= attribute "password", password, true %>
+  <%= attribute "host",     host %>
+  <%= attribute "port",     port %>
+
+<% params.each do |key, value| %>
+  <%= key %>: <%= value.first %>
+<% end %>

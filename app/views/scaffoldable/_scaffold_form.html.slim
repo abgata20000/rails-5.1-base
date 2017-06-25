@@ -1,0 +1,13 @@
+= sample_form_for(instance, url: generate_form_action_url(instance)) do |f|
+  .row= f.error_notification
+  .form-inputs.row
+    = render 'form', f: f
+  br
+  .form-actions.row
+    .col-md-3
+    .col-md-9
+      = f.button :submit, class: 'btn btn-primary'
+      - if %w(new create).include?(action_name) == false
+        = link_to t('form_cancel_edit'), scaffoldable_url_for(action: :show, id: f.object.id), class: 'btn btn-default'
+      - else
+        = link_to t('index'), scaffoldable_url_for(action: :index), class: 'btn btn-default'
